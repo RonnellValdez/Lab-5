@@ -28,7 +28,7 @@ int main()
 
 
 	//Does It Form A Line
-	if (x1 == x2, y1 == y2) {
+	if (x1 == x2 && y1 == y2) {
 		cout << "ERROR! -- These points do not form a line." << endl;
 		return 0;
 	}
