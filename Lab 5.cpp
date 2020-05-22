@@ -14,7 +14,6 @@ int main()
 	double slope;
 
 	//User Input
-	cout << "What is the coordinate for the first point? " << endl;
 	cout << "x = "; 
 	cin >> x1;
 	cout << "y = ";
@@ -32,25 +31,26 @@ int main()
 	if (x1 == x2, y1 == y2) {
 		cout << "ERROR! -- These points do not form a line." << endl;
 		return 0;
-		}
+	}
 	
 	
 	//Slope Calculation
-	slope = ((double)y2 - (double) y1) / ((double)x2 - (double)x1);
+	if (x2 - x1 == 0) {
+		cout << "Error! -- The line is verical and the slope is undefined." << endl;
+		return 0;
+	}
+	else {
+		slope = (y2 -  y1) / (x2 - x1);
+	}
 	
 
 	//Slope Description
 	if (slope == 0){
-		cout << "ERROR! -- The line is horizontal and the slope is 0." << endl;
-		return 0;
-		}
-	else if ( x1 == x2 ) {
-		cout << "ERROR! -- The line is vertical and the slope is undefined." << endl;
-		return 0;
-		}
+		cout << "The line is horizontal and the slope is 0." << endl;
+	}
 	else {
 		cout << "The slope is " << slope << endl;
-		}
+	}
 
 	//Slope Intercept Form -- y = mx+b
 	double yint = ((slope*x1) - y1)/-1;
@@ -58,5 +58,7 @@ int main()
 	
 
 	return 0;
+
+
 }
 
